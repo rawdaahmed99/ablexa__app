@@ -8,7 +8,9 @@ class ForgetPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
+      body: SingleChildScrollView(
+      
+      child:Column(
           children: [
           Center(
             heightFactor: 2,
@@ -64,7 +66,7 @@ class ForgetPassword extends StatelessWidget {
                 )
         
       
-      ],),
+      ],),),
     );
   }
 }

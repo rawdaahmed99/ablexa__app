@@ -1,4 +1,4 @@
-import 'package:ablexa/pages/login_page.dart';
+import 'package:ablexa/pages/Login_page/view/login_page.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatelessWidget {

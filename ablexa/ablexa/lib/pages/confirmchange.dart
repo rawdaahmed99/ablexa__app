@@ -1,4 +1,5 @@
-import 'package:ablexa/pages/profile_page.dart';
+
+import 'package:ablexa/pages/profile_page/view/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class confirm_pass_change extends StatelessWidget {

@@ -1,5 +1,6 @@
-import 'package:ablexa/pages/landing_page.dart';
 import 'package:flutter/material.dart';
+
+import 'package:ablexa/pages/landing_page.dart';
 
 void main() {
   runApp(const AblexaApp());

@@ -1,9 +1,17 @@
 import 'package:ablexa/pages/forget_page.dart';
-import 'package:ablexa/pages/profile_page.dart';
+import 'package:ablexa/pages/profile_page/view/profile_page.dart';
+
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class LoginPage extends StatefulWidget {
+  LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  bool _obscureText = false;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +26,8 @@ class LoginPage extends StatelessWidget {
                     padding: EdgeInsets.only(top: 150),
                     child: Text(
                       "Welcome back!",
-                      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                     )),
                 Text(
                   "sign in to access your account",
@@ -31,7 +40,7 @@ class LoginPage extends StatelessWidget {
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(right: 260, bottom: 8),
+                        padding: const EdgeInsets.only(right: 310, bottom: 8),
                         child: Text(
                           "Email",
                           style: TextStyle(
@@ -51,44 +60,36 @@ class LoginPage extends StatelessWidget {
                           children: [
                             Padding(
                               padding:
-                                  const EdgeInsets.only(right: 210, bottom: 8),
+                                  const EdgeInsets.only(right: 260, bottom: 8),
                               child: Text(
                                 "Password",
                                 style: TextStyle(
                                     fontSize: 20, fontWeight: FontWeight.bold),
                               ),
                             ),
-                            const TextField(
+                            TextField(
                               style: TextStyle(color: Colors.grey),
                               decoration: InputDecoration(
-                                  labelText: "Enter Your Password",
-                                  suffixIcon: Icon(
-                                    Icons.remove_red_eye_outlined,
-                                    color: Colors.grey,
-                                    size: 25,
-                                  ),
-                                  border: OutlineInputBorder(),
-                                  focusedBorder: OutlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.blue))),
+                                labelText: "Enter Your Password",
+                                suffixIcon: GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      _obscureText =! _obscureText;
+                                    });
+                                  },
+                                  child: Icon(_obscureText
+                                      ? Icons.visibility
+                                      : Icons.visibility_off),
+                                ),
+                                border: OutlineInputBorder(),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.blue),
+                                ),
+                              ),
+                              obscureText: _obscureText,
                             ),
                             Row(
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 15.0),
-                                  child: Row(
-                                    children: [
-                                      Checkbox(
-                                        value: false,
-                                        onChanged: (bool? value) {},
-                                      ),
-                                      Text(
-                                        "Remember me",
-                                        style: TextStyle(fontSize: 15),
-                                      ),
-                                    ],
-                                  ),
-                                ),
                                 OutlinedButton(
                                   style: OutlinedButton.styleFrom(
                                     side: BorderSide.none,
@@ -101,9 +102,9 @@ class LoginPage extends StatelessWidget {
                                   },
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 20, bottom: 50),
+                                        left: 180, bottom: 50),
                                     child: Text('Forget Password?',
-                                        style: TextStyle(fontSize: 10)),
+                                        style: TextStyle(fontSize: 17)),
                                   ),
                                 ),
                               ],
