@@ -71,7 +71,7 @@ class ProfilePage extends StatelessWidget {
                     child: Text(
                       "Atendence",
                       style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.w500),
                     )),
@@ -118,7 +118,7 @@ class ProfilePage extends StatelessWidget {
                         color: const Color.fromARGB(255, 197, 196, 196)),
                     borderRadius: BorderRadius.all(Radius.circular(5)),
                     boxShadow: [
-                      const BoxShadow(
+                       BoxShadow(
                         color: Color.fromARGB(245, 245, 245, 245),
                         blurRadius: 2,
                         offset: Offset(0.0, 2.0),
@@ -150,8 +150,8 @@ class ProfilePage extends StatelessWidget {
                         ),
                         child: Text('Present ',
                             style: TextStyle(
-                                color: Color.fromRGBO(33, 99, 3, 100),
-                                fontSize: 18,
+                                color: Color.fromARGB(210, 0, 0, 0),
+                                fontSize: 17,
                                 fontWeight: FontWeight.bold)),
                       ),
                     ],
@@ -174,58 +174,13 @@ class ProfilePage extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      Text('2/1/2025 ',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold)),
-                      Container(
-                        margin: EdgeInsets.only(left: 160),
-                        padding:
-                            EdgeInsets.symmetric(vertical: 4, horizontal: 20),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Color.fromARGB(255, 196, 197, 196)),
-                          borderRadius: BorderRadius.all(Radius.circular(45)),
-                          boxShadow: [
-                            const BoxShadow(
-                              color: Color.fromRGBO(151, 250, 138, 0.612),
-                              blurRadius: 2,
-                              offset: Offset(0.0, 0.0),
-                            ),
-                          ],
-                        ),
-                        child: Text('Present ',
-                            style: TextStyle(
-                                color: Color.fromRGBO(33, 99, 3, 100),
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold)),
+                      Text(
+                        '3/1/2025 ',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
                       ),
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(10),
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                        color: const Color.fromARGB(255, 197, 196, 196)),
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
-                    boxShadow: [
-                      const BoxShadow(
-                        color: Color.fromARGB(245, 245, 245, 245),
-                        blurRadius: 2,
-                        offset: Offset(0.0, 2.0),
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    children: [
-                      Text('3/1/2025 ',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold)),
                       Container(
                         margin: EdgeInsets.only(left: 160),
                         padding:
@@ -244,149 +199,8 @@ class ProfilePage extends StatelessWidget {
                         ),
                         child: Text('Absent ',
                             style: TextStyle(
-                                color: Color.fromRGBO(33, 99, 3, 100),
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold)),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(10),
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                        color: const Color.fromARGB(255, 197, 196, 196)),
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
-                    boxShadow: [
-                      const BoxShadow(
-                        color: Color.fromARGB(245, 245, 245, 245),
-                        blurRadius: 2,
-                        offset: Offset(0.0, 2.0),
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    children: [
-                      Text('4/1/2025 ',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold)),
-                      Container(
-                        margin: EdgeInsets.only(left: 160),
-                        padding:
-                            EdgeInsets.symmetric(vertical: 4, horizontal: 20),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Color.fromARGB(255, 196, 197, 196)),
-                          borderRadius: BorderRadius.all(Radius.circular(45)),
-                          boxShadow: [
-                            const BoxShadow(
-                              color: Color.fromRGBO(151, 250, 138, 0.612),
-                              blurRadius: 2,
-                              offset: Offset(0.0, 0.0),
-                            ),
-                          ],
-                        ),
-                        child: Text('Present ',
-                            style: TextStyle(
-                                color: Color.fromRGBO(33, 99, 3, 100),
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold)),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(10),
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                        color: const Color.fromARGB(255, 197, 196, 196)),
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
-                    boxShadow: [
-                      const BoxShadow(
-                        color: Color.fromARGB(245, 245, 245, 245),
-                        blurRadius: 2,
-                        offset: Offset(0.0, 2.0),
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    children: [
-                      Text('5/1/2025 ',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold)),
-                      Container(
-                        margin: EdgeInsets.only(left: 160),
-                        padding:
-                            EdgeInsets.symmetric(vertical: 4, horizontal: 20),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Color.fromARGB(255, 196, 197, 196)),
-                          borderRadius: BorderRadius.all(Radius.circular(45)),
-                          boxShadow: [
-                            const BoxShadow(
-                              color: Color.fromRGBO(255, 80, 80, 0.377),
-                              blurRadius: 2,
-                              offset: Offset(0.0, 0.0),
-                            ),
-                          ],
-                        ),
-                        child: Text('Absent ',
-                            style: TextStyle(
-                                color: Color.fromRGBO(33, 99, 3, 100),
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold)),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(10),
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                        color: const Color.fromARGB(255, 197, 196, 196)),
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
-                    boxShadow: [
-                      const BoxShadow(
-                        color: Color.fromARGB(245, 245, 245, 245),
-                        blurRadius: 2,
-                        offset: Offset(0.0, 2.0),
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    children: [
-                      Text('6/1/2025 ',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold)),
-                      Container(
-                        margin: EdgeInsets.only(left: 160),
-                        padding:
-                            EdgeInsets.symmetric(vertical: 4, horizontal: 20),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Color.fromARGB(255, 196, 197, 196)),
-                          borderRadius: BorderRadius.all(Radius.circular(45)),
-                          boxShadow: [
-                            const BoxShadow(
-                              color: Color.fromRGBO(151, 250, 138, 0.612),
-                              blurRadius: 2,
-                              offset: Offset(0.0, 0.0),
-                            ),
-                          ],
-                        ),
-                        child: Text('Present ',
-                            style: TextStyle(
-                                color: Color.fromRGBO(33, 99, 3, 100),
-                                fontSize: 18,
+                                color: Color.fromARGB(210, 0, 0, 0),
+                                fontSize: 17,
                                 fontWeight: FontWeight.bold)),
                       ),
                     ],
