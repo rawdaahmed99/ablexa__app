@@ -1,12 +1,27 @@
 import 'package:ablexa/pages/changepass_page.dart';
 import 'package:ablexa/pages/forget_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:pinput/pinput.dart';
 
 class SendCode extends StatelessWidget {
   const SendCode({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final defaultPinTheme = PinTheme(
+      width: 56,
+      height: 60,
+      textStyle: const TextStyle(
+        fontSize: 22,
+        color: Colors.black,
+      ),
+      decoration: BoxDecoration(
+        // color: Colors.green.shade100,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: Colors.black),
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -51,45 +66,19 @@ class SendCode extends StatelessWidget {
                     height: 50,
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.black)),
+                      Pinput(
+                        length: 4,
+                        defaultPinTheme: defaultPinTheme,
+                        focusedPinTheme: defaultPinTheme.copyWith(
+                          decoration: defaultPinTheme.decoration!.copyWith(
+                            border: Border.all(
+                                color: Color.fromARGB(255, 108, 99, 255)),
+                          ),
+                        ),
+                        onCompleted: (pin) => debugPrint(pin),
                       ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.black)),
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.black)),
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.black)),
-                      )
                     ],
                   )
                 ],
@@ -99,7 +88,7 @@ class SendCode extends StatelessWidget {
               height: 40,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 40.0),
+              padding: const EdgeInsets.only(left: 60.0),
               child: Row(
                 children: [
                   Text(
@@ -111,6 +100,7 @@ class SendCode extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
+                    onTap: () {},
                     child: Text(
                       "Resend",
                       style: TextStyle(

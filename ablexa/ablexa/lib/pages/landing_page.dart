@@ -15,8 +15,8 @@ class LandingPage extends StatelessWidget {
           ),
           Center(
             child: Image(
-                image:
-                    AssetImage("assets/images/undraw_true_friends_c-94-g 1.png")),
+                image: AssetImage(
+                    "assets/images/undraw_true_friends_c-94-g 1.png")),
           ),
           Spacer(
             flex: 1,

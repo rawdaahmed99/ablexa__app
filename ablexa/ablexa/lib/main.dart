@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
 import 'package:ablexa/pages/landing_page.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class AblexaApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:LandingPage(),
+      home: LandingPage(),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:ablexa/pages/setting.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -26,7 +27,12 @@ class ProfilePage extends StatelessWidget {
                     Icons.settings,
                     size: 30,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return SettingPage();
+                    }));
+                  },
                 ), // IconButton(onPressed: (){}, icon: icon)
               ],
             ),
@@ -118,7 +124,7 @@ class ProfilePage extends StatelessWidget {
                         color: const Color.fromARGB(255, 197, 196, 196)),
                     borderRadius: BorderRadius.all(Radius.circular(5)),
                     boxShadow: [
-                       BoxShadow(
+                      BoxShadow(
                         color: Color.fromARGB(245, 245, 245, 245),
                         blurRadius: 2,
                         offset: Offset(0.0, 2.0),
