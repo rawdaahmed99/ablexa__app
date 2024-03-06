@@ -1,5 +1,5 @@
+import 'package:ablexa/Api/login.dart';
 import 'package:ablexa/pages/forget_page.dart';
-import 'package:ablexa/pages/profile_page/view/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -10,20 +10,21 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  bool _obscureText = false;
-
+  bool obscureText = true;
   @override
   Widget build(BuildContext context) {
     TextEditingController EmailController = new TextEditingController();
     TextEditingController PasswordController = new TextEditingController();
-    GlobalKey<FormState> _formstate = GlobalKey<FormState>();
+    final _FormKey = GlobalKey<FormState>();
+
+    login_user log = login_user();
     return Scaffold(
         backgroundColor: Colors.white,
         body: Center(
           child: SingleChildScrollView(
             child: Form(
-              // autovalidateMode: AutovalidateMode.onUserInteraction,
-              key: _formstate,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              key: _FormKey,
               child: Container(
                 padding: EdgeInsets.only(bottom: 20),
                 child: Column(
@@ -97,10 +98,10 @@ class _LoginPageState extends State<LoginPage> {
                                     suffixIcon: GestureDetector(
                                       onTap: () {
                                         setState(() {
-                                          _obscureText = !_obscureText;
+                                          obscureText = !obscureText;
                                         });
                                       },
-                                      child: Icon(_obscureText
+                                      child: Icon(obscureText
                                           ? Icons.visibility_off
                                           : Icons.visibility),
                                     ),
@@ -111,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                                               255, 108, 99, 255)),
                                     ),
                                   ),
-                                  obscureText: _obscureText,
+                                  obscureText: obscureText,
                                 ),
                                 Row(
                                   children: [
@@ -141,16 +142,21 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                      backgroundColor: Color.fromARGB(
-                                          255, 108, 99, 255), // لون الخلفية
-                                      // لون النص عند التفاعل
+                                      backgroundColor:
+                                          Color.fromARGB(255, 108, 99, 255),
                                       minimumSize: Size(170, 50),
                                     ),
                                     onPressed: () {
-                                      Navigator.push(context,
-                                          MaterialPageRoute(builder: (context) {
-                                        return ProfilePage();
-                                      }));
+                                      if (_FormKey.currentState!.validate()) {
+                                        log.login(
+                                            EmailController.text.toString(),
+                                            PasswordController.text.toString());
+                                      }
+
+                                      // Navigator.push(context,
+                                      //     MaterialPageRoute(builder: (context) {
+                                      //   return ProfilePage();
+                                      // }));
                                     },
                                     child: Text(
                                       "Log in",
